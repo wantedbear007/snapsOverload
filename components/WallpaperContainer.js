@@ -35,6 +35,7 @@ const WallpaperContainer = props => {
   return (
     <View style={{flex: 1}}>
       <FlatList
+        showsVerticalScrollIndicator={false}
         data={wallpaperData}
         keyExtractor={({id}, index) => id}
         renderItem={({item}) => (
@@ -50,15 +51,16 @@ const WallpaperContainer = props => {
             </TouchableOpacity>
             <View style={styles.imageOptions}>
               <TouchableOpacity style={styles.likeIcon}>
-                <Icon name="heart" size={25} color={colors.accent} />
+                <Icon name="heart" size={25} color={colors.white} />
                 <Text style={styles.likeText}>{item.likes}</Text>
               </TouchableOpacity>
+              <View style={styles.comboButton}>
               <TouchableOpacity style={styles.downloadIcon}>
                 <Icon name="download" color="white" size={25} />
               </TouchableOpacity>
               <TouchableOpacity style={styles.infoIcon}>
                 <Icon name="more" size={25} color="white" />
-              </TouchableOpacity>
+              </TouchableOpacity></View>
             </View>
           </View>
         )}
@@ -70,17 +72,18 @@ const WallpaperContainer = props => {
 const styles = StyleSheet.create({
   wallpaperWrapper: {
     backgroundColor: colors.grey,
-    padding: 20,
+    padding: 10,
     marginVertical: 20,
     borderRadius: 20,
+    borderWidth: 1,
+    elevation: 10,
   },
   imageContainer: {
     flex: 1,
     width: 340,
-    height: 340,
+    height: 400,
     resizeMode: 'contain',
     borderRadius: 15,
-    borderColor: '#FFF',
     marginVertical: 10,
   },
   imageWrapper: {
@@ -90,9 +93,17 @@ const styles = StyleSheet.create({
   },
   imageOptions: {
     flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    marginHorizontal: 80,
+    justifyContent: 'space-between',
+    backgroundColor: colors.black,
+    borderRadius: 12,
+    marginHorizontal: 0,
+    paddingVertical: 10,
+    elevation: 20,
+    paddingHorizontal:10 ,
+  },
+  comboButton: {
+    flexDirection: 'row',
+
   },
   likeIcon: {
     flexDirection: 'row',

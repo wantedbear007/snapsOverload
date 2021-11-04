@@ -54,26 +54,27 @@ const WallpaperSection = props => {
 const styles = StyleSheet.create({
   primaryContainer: {
     marginHorizontal: 14,
-    // backgroundColor: colors.grey,
+    backgroundColor: colors.black,
     flex: 1,
     // marginHorizontal: 16,
     // marginBottom: 10,
-    // borderRadius: 15,
+    borderRadius: 15,
+    padding: 11,
     // paddingHorizontal: 10,
     // paddingVertical: 20,
   },
   picturesContainer: {
     // justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: colors.brown,
+    // backgroundColor: colors.brown,
     height: 350,
     borderRadius: 20,
     elevation: 15,
     marginHorizontal: 17,
   },
   imageContainer: {
-    height: 300,
-    width: 300,
+    height: 400,
+    width: 400,
   },
   image: {
     flex: 1,

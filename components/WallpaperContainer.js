@@ -8,7 +8,7 @@ import {
   FlatList,
 } from 'react-native';
 
-import { Icon } from 'react-native-vector-icons/icon';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const WallpaperContainer = props => {
   const [wallpaperData, setWallpaperData] = useState([]);
@@ -47,9 +47,16 @@ const WallpaperContainer = props => {
               />
             </View>
             <View style={styles.imageOptions}>
-              <View style={styles.likeIcon}></View>
-              <View style={styles.downloadIcon}></View>
-              <View style={styles.infoIcon}></View>
+              <View style={styles.likeIcon}>
+                <Icon name="heart" size={30} color="white" />
+                {/* <Text style={styles.likeText}>{item.likes}</Text> */}
+              </View>
+              <View style={styles.downloadIcon}>
+                <Icon name="download" color="white" size={30} />
+              </View>
+              <View style={styles.infoIcon}>
+                <Icon name="more" size={30} color="white" />
+              </View>
             </View>
             {/* <Text style={{color: '#FFF'}}>{item.description}</Text> */}
             {/* <Text>{item.likes}</Text> */}
@@ -78,6 +85,15 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     elevation: 10,
   },
+  imageOptions: {
+    flexDirection: 'row',
+    alignItems:'center',
+    justifyContent: 'space-around'
+  },
+  likeIcon: {},
+  likeText: {},
+  downloadIcon: {},
+  infoIcon: {},
 });
 
 export default WallpaperContainer;

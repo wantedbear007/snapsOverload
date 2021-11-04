@@ -9,6 +9,8 @@ import {
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
+import colors from '../assets/colors';
 
 const WallpaperContainer = props => {
   const [wallpaperData, setWallpaperData] = useState([]);
@@ -31,13 +33,13 @@ const WallpaperContainer = props => {
   // console.log(wallpaperData);
 
   return (
-    <View style={{flex: 1, padding: 5}}>
+    <View style={{flex: 1}}>
       <FlatList
         data={wallpaperData}
         keyExtractor={({id}, index) => id}
         renderItem={({item}) => (
-          <TouchableOpacity style={styles.wallpaperWrapper}>
-            <View style={styles.imageWrapper}>
+          <View style={styles.wallpaperWrapper}>
+            <TouchableOpacity style={styles.imageWrapper}>
               <Image
                 resizeMode="cover"
                 source={{
@@ -45,22 +47,20 @@ const WallpaperContainer = props => {
                 }}
                 style={styles.imageContainer}
               />
-            </View>
+            </TouchableOpacity>
             <View style={styles.imageOptions}>
-              <View style={styles.likeIcon}>
-                <Icon name="heart" size={30} color="white" />
-                {/* <Text style={styles.likeText}>{item.likes}</Text> */}
-              </View>
-              <View style={styles.downloadIcon}>
-                <Icon name="download" color="white" size={30} />
-              </View>
-              <View style={styles.infoIcon}>
-                <Icon name="more" size={30} color="white" />
-              </View>
+              <TouchableOpacity style={styles.likeIcon}>
+                <Icon name="heart" size={25} color={colors.accent} />
+                <Text style={styles.likeText}>{item.likes}</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.downloadIcon}>
+                <Icon name="download" color="white" size={25} />
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.infoIcon}>
+                <Icon name="more" size={25} color="white" />
+              </TouchableOpacity>
             </View>
-            {/* <Text style={{color: '#FFF'}}>{item.description}</Text> */}
-            {/* <Text>{item.likes}</Text> */}
-          </TouchableOpacity>
+          </View>
         )}
       />
     </View>
@@ -69,7 +69,10 @@ const WallpaperContainer = props => {
 
 const styles = StyleSheet.create({
   wallpaperWrapper: {
-    backgroundColor: 'red',
+    backgroundColor: colors.grey,
+    padding: 20,
+    marginVertical: 20,
+    borderRadius: 20,
   },
   imageContainer: {
     flex: 1,
@@ -87,11 +90,20 @@ const styles = StyleSheet.create({
   },
   imageOptions: {
     flexDirection: 'row',
-    alignItems:'center',
-    justifyContent: 'space-around'
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    marginHorizontal: 80,
   },
-  likeIcon: {},
-  likeText: {},
+  likeIcon: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  likeText: {
+    color: colors.white,
+    fontSize: 18,
+    fontFamily: 'Raleway-Medium',
+    marginLeft: 5,
+  },
   downloadIcon: {},
   infoIcon: {},
 });

@@ -53,13 +53,14 @@ const WallpaperSection = props => {
 
 const styles = StyleSheet.create({
   primaryContainer: {
+    marginHorizontal: 14,
     // backgroundColor: colors.grey,
     flex: 1,
-    marginHorizontal: 16,
-    marginBottom: 10,
-    borderRadius: 15,
-    paddingHorizontal: 10,
-    paddingVertical: 20,
+    // marginHorizontal: 16,
+    // marginBottom: 10,
+    // borderRadius: 15,
+    // paddingHorizontal: 10,
+    // paddingVertical: 20,
   },
   picturesContainer: {
     // justifyContent: 'center',

@@ -15,7 +15,7 @@ import colors from '../assets/colors';
 const WallpaperContainer = props => {
   const [wallpaperData, setWallpaperData] = useState([]);
   const count = 30;
-  const apiKey = 'vyutfS7gMqOL_8t52wckyT-6GKbyqYpVLnmIw3N2vW8';
+  const apiKey = 'YOUR_API_KEY';
   const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
 
   const getWallpapers = async () => {
